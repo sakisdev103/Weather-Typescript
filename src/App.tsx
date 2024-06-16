@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "./state/store";
-import { Search, Widget } from "./components";
+import { Search, Widget } from "./features";
 
 const App = () => {
   const { currentWeatherData, forecastWeatherData } = useSelector(

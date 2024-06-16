@@ -10,7 +10,7 @@ const SecondaryData = () => {
   const { currentWeatherData } = useSelector((state: RootState) => state.data);
 
   return (
-    <div className="flex justify-evenly mt-10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 justify-items-center my-10">
       <div className="flex gap-2">
         <Wind />
         <p>{`${currentWeatherData?.wind.speed.toFixed()} km/h`}</p>
