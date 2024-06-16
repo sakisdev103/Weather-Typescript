@@ -1,19 +1,15 @@
-import { RootState } from "@/state/store";
-import { useSelector } from "react-redux";
-
 //Files
 import PrimaryData from "../components/PrimaryData";
 import SecondaryData from "../components/SecondaryData";
 import DailyForecast from "@/components/DailyForecast";
+import HourlyForecast from "@/components/HourlyForecast";
 
 const Widget = () => {
-  const { forecastWeatherData } = useSelector((state: RootState) => state.data);
-  console.log(forecastWeatherData);
-
   return (
     <div>
       <PrimaryData />
       <SecondaryData />
+      <HourlyForecast />
       <DailyForecast />
     </div>
   );

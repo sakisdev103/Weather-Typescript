@@ -8,7 +8,7 @@ const App = () => {
   );
 
   return (
-    <div className="container max-w-lg mx-auto">
+    <div className="container max-w-4xl  mx-auto">
       <Search />
       {currentWeatherData && forecastWeatherData !== null && <Widget />}
     </div>
