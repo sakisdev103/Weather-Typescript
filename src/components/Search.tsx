@@ -28,9 +28,14 @@ const Search = () => {
 
   //Form
   const formSchema = z.object({
-    location: z.string().min(1, {
-      message: "Please provide a location",
-    }),
+    location: z
+      .string()
+      .min(1, {
+        message: "Please provide a location",
+      })
+      .max(50, {
+        message: "Location name is too long",
+      }),
   });
 
   // 1. Define your form.
@@ -48,7 +53,7 @@ const Search = () => {
   }
 
   return (
-    <div className="my-10">
+    <div className="max-w-sm mx-auto my-10">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className=" flex ">
           <div className="w-screen">
@@ -57,7 +62,7 @@ const Search = () => {
               name="location"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
+                  <FormControl className="text-lg">
                     <Input placeholder="Barcelona" {...field} />
                   </FormControl>
                   <FormMessage />
