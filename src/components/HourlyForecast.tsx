@@ -9,13 +9,13 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 const HourlyForecast = () => {
   const { forecastWeatherData } = useSelector((state: RootState) => state.data);
 
-  const array = forecastWeatherData?.list.map(({ dt_txt }) => {
-    return dt_txt.slice(0, 10);
-  });
+  // const array = forecastWeatherData?.list.map(({ dt_txt }) => {
+  //   return dt_txt.slice(0, 10);
+  // });
 
-  const filteredArray = [...new Set(array?.slice(1, array.length))];
+  // const filteredArray = [...new Set(array?.slice(1, array.length))];
 
-  console.log(filteredArray);
+  // console.log(filteredArray);
 
   return (
     <div className="mt-10">

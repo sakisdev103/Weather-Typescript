@@ -11,13 +11,6 @@ import Chart from "chart.js/auto";
 const ChartData = () => {
   const { forecastWeatherData } = useSelector((state: RootState) => state.data);
 
-  const array = forecastWeatherData?.list.map(({ dt_txt }) => {
-    return dt_txt.slice(0, 10);
-  });
-
-  const filteredArray = [...new Set(array?.slice(1, array.length))];
-
-  console.log(filteredArray);
   useEffect(() => {
     let myChart: any;
 
@@ -29,7 +22,7 @@ const ChartData = () => {
           return moment
             .utc(item.dt, "X")
             .add(forecastWeatherData.city.timezone, "seconds")
-            .format("HH:mm");
+            .format("ddd HH:mm");
         }),
         datasets: [
           {
