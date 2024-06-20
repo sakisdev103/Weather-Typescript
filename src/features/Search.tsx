@@ -3,8 +3,6 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/state/store";
 import { getCurrentWeather, getForecastWeather } from "@/state/data/dataSlice";
 
-//Custom fetch
-
 //Form
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";

@@ -9,14 +9,11 @@ import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 const TableData = () => {
   const { forecastWeatherData } = useSelector((state: RootState) => state.data);
 
-  console.log(forecastWeatherData);
-
   const array = forecastWeatherData?.list.map(({ dt_txt }) => {
     return dt_txt.slice(0, 10);
   });
 
   const filteredArray = [...new Set(array?.slice(1, array.length))];
-  console.log(filteredArray[0]);
 
   let tempAvg = [];
 
@@ -35,7 +32,7 @@ const TableData = () => {
       });
   }
 
-  const avgTemperatureDaily = tempAvg.map((item) =>
+  const avgTemperatureDaily: string[] = tempAvg.map((item) =>
     (
       item?.reduce((a: number, b: number) => a + b, 0)! / item?.length!
     ).toFixed()
@@ -45,13 +42,13 @@ const TableData = () => {
     <div>
       <Table>
         <TableBody className="text-lg">
-          {avgTemperatureDaily.map((item, index: number) => {
+          {avgTemperatureDaily.map((item: any, index: number) => {
             return (
               <TableRow key={index}>
                 <TableCell>
-                  <p>{moment(filteredArray[index]).format("ddd")}</p>
+                  <p>{moment(filteredArray[index]).format("dddd")}</p>
                 </TableCell>
-                <TableCell key={index}>
+                <TableCell>
                   <p>{`${item} °C`}</p>
                 </TableCell>
               </TableRow>

@@ -3,10 +3,7 @@ import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";
 
 import moment from "moment";
-
 import Chart from "chart.js/auto";
-
-//Ui
 
 const ChartData = () => {
   const { forecastWeatherData } = useSelector((state: RootState) => state.data);
