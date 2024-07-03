@@ -7,6 +7,8 @@ import { getCurrentWeather, getForecastWeather } from "@/state/data/dataSlice";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+
+//UI
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,14 +19,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-//Icons
+//Icon
 import { Search as SearchIcon } from "lucide-react";
 
 const Search = () => {
-  //Redux
   const dispatch = useDispatch<AppDispatch>();
 
-  //Form
   const formSchema = z.object({
     location: z
       .string()
@@ -36,7 +36,6 @@ const Search = () => {
       }),
   });
 
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,7 +43,6 @@ const Search = () => {
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     dispatch(getCurrentWeather(values.location));
     dispatch(getForecastWeather(values.location));

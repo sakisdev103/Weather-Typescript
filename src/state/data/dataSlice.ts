@@ -4,7 +4,7 @@ import { customFetch } from "@/utils/customFetch";
 
 //Api key
 
-const API_KEY = "7ebf03ca6cdbc891cfccdb8c6bb7d351";
+const API_KEY = import.meta.env.VITE_APP_WEATHER_API_KEY;
 
 type currentWeatherState = {
   coord: {

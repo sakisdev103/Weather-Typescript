@@ -1,7 +1,8 @@
+//Redux
 import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";
 
-//icons
+//Icons
 import { Sunrise, Sunset, Droplet, Wind } from "lucide-react";
 
 import moment from "moment";
