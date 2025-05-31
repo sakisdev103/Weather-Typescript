@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "https://thanosdev.com/Weather-Typescript",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
